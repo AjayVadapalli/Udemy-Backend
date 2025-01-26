@@ -1,0 +1,15 @@
+{
+  "name": "super",
+  "version": "1.0.0",
+  "description": "I'm a superhero",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ajay",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^4.0.0"
+  }
+}

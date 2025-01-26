@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        .form-container {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1, h3 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+        }
+        td {
+            padding: 10px;
+        }
+        input[type="text"], input[type="password"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn {
+            background-color: #007bff;
+            color: white;
+        }
+        .reset-btn {
+            background-color: #dc3545;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Registration Form</h1>
+        <h3>Fill Your Details</h3>
+        <form>
+            <table>
+                <tr>
+                    <td><strong>Full Name:</strong></td>
+                    <td><input type="text" placeholder="Enter your full name" required></td>
+                </tr>
+                <tr>
+                    <td><strong>Password:</strong></td>
+                    <td><input type="password" placeholder="Enter your password" required></td>
+                </tr>
+                <tr>
+                    <td><strong>Age:</strong></td>
+                    <td><input type="text" placeholder="Enter your age"></td>
+                </tr>
+                <tr>
+                    <td><strong>Date of Birth:</strong></td>
+                    <td><input type="date"></td>
+                </tr>
+                <tr>
+                    <td><strong>Gender:</strong></td>
+                    <td>
+                        <input type="radio" name="gender" value="male"> Male
+                        <input type="radio" name="gender" value="female"> Female
+                        <input type="radio" name="gender" value="other"> Other
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Hobbies:</strong></td>
+                    <td>
+                        <input type="checkbox" value="Reading"> Reading<br>
+                        <input type="checkbox" value="Sports"> Sports<br>
+                        <input type="checkbox" value="Traveling"> Traveling
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Country:</strong></td>
+                    <td>
+                        <select>
+                            <option>Select your country</option>
+                            <option>India</option>
+                            <option>USA</option>
+                            <option>UK</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>About Yourself:</strong></td>
+                    <td>
+                        <textarea rows="4" placeholder="Write about yourself..."></textarea>
+                    </td>
+                </tr>
+            </table>
+            <div class="buttons">
+                <button type="submit" class="submit-btn">Submit</button>
+                <button type="reset" class="reset-btn">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
