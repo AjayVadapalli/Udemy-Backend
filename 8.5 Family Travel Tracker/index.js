@@ -8,8 +8,8 @@ const port = 3000;
 const db = new pg.Client({
   user: "postgres",
   host: "localhost",
-  database: "world",
-  password: "123456",
+  database: "World",
+  password: "#Solo143",
   port: 5432,
 });
 db.connect();
@@ -24,7 +24,7 @@ let users = [
   { id: 2, name: "Jack", color: "powderblue" },
 ];
 
-async function checkVisisted() {
+async function checkVisited() {
   const result = await db.query("SELECT country_code FROM visited_countries");
   let countries = [];
   result.rows.forEach((country) => {
@@ -33,7 +33,7 @@ async function checkVisisted() {
   return countries;
 }
 app.get("/", async (req, res) => {
-  const countries = await checkVisisted();
+  const countries = await checkVisited();
   res.render("index.ejs", {
     countries: countries,
     total: countries.length,
