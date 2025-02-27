@@ -27,24 +27,25 @@ let items = [
 ];
 
 app.get("/", async (req, res) => {
-  try{
+  try {
     const result = await db.query("SELECT * FROM items ORDER BY id ASC");
     items = result.rows;
+
     res.render("index.ejs", {
       listTitle: "Today",
       listItems: items,
     });
-  } catch (err){
+  } catch (err) {
     console.log(err);
   }
 });
 
 app.post("/add", async (req, res) => {
   const item = req.body.newItem;
-  //items.push({ title: item });
+  // items.push({title: item});
   try {
-      await db.query("INSERT INTO items (title) VALUES ($1)", [item]);      
-      res.redirect("/");
+    await db.query("INSERT INTO items (title) VALUES ($1)", [item]);
+    res.redirect("/");
   } catch (err) {
     console.log(err);
   }
@@ -53,6 +54,7 @@ app.post("/add", async (req, res) => {
 app.post("/edit", async (req, res) => {
   const item = req.body.updatedItemTitle;
   const id = req.body.updatedItemId;
+
   try {
     await db.query("UPDATE items SET title = ($1) WHERE id = $2", [item, id]);
     res.redirect("/");
